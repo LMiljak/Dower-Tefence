@@ -6,6 +6,18 @@
   <name>Dower Tefence</name>
   <description>Dower Tefence is a Minecraft Plugin for Bukkit/Spigot servers that adds the popular game "Tower Defence" as a minigame.</description>
 
+  <developers>
+     <developer>
+       <name>Bram Crielaard</name>
+     </developer>
+     <developer>
+       <name>Nils Hullegien</name>
+     </developer>
+     <developer>
+       <name>Luka Miljak</name>
+     </developer>
+  </developers>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
