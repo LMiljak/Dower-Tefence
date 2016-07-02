@@ -31,6 +31,22 @@
   </dependencies>
 
   <build>
+    <defaultGoal>clean install</defaultGoal>
+    <finalName>${project.name}-${project.version}</finalName>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <resources>
+      <resource>
+        <targetPath>.</targetPath>
+        <filtering>false</filtering>
+        <directory>src/main/resources/</directory>
+        <includes>
+          <include>**/*</include>
+          <include>**/**/*</include>
+          <include>**/**/**/*</include>
+        </includes>
+      </resource>
+    </resources>
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
