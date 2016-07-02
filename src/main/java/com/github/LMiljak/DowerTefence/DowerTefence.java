@@ -1,4 +1,4 @@
-package com.github.LMiljak;
+package com.github.LMiljak.DowerTefence;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
