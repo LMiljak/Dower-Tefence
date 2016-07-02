@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.LMiljak</groupId>
+  <artifactId>Dower-Tefence</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Dower Tefence</name>
+  <description>Dower Tefence is a Minecraft Plugin for Bukkit/Spigot servers that adds the popular game "Tower Defence" as a minigame.</description>
+
+  <developers>
+     <developer>
+       <name>Bram Crielaard</name>
+     </developer>
+     <developer>
+       <name>Nils Hullegien</name>
+     </developer>
+     <developer>
+       <name>Luka Miljak</name>
+     </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <spigot.version>1.10.2-R0.1-SNAPSHOT</spigot.version>
+  </properties>
+
+  <repositories>
+    <!-- Spigot Repository -->
+    <repository>
+      <id>spigot-repo</id>
+      <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <!-- Spigot API -->
+    <dependency>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot-api</artifactId>
+      <version>${spigot.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.8</version>
+      <scope>provided</scope>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>clean install</defaultGoal>
+    <finalName>${project.name}-${project.version}</finalName>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <resources>
+      <resource>
+        <targetPath>.</targetPath>
+        <filtering>false</filtering>
+        <directory>src/main/resources/</directory>
+        <includes>
+          <include>**/*</include>
+          <include>**/**/*</include>
+          <include>**/**/**/*</include>
+        </includes>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
