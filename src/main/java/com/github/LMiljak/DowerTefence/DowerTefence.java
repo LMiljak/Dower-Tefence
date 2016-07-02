@@ -1,4 +1,4 @@
-package com.github.LMiljak.dowertefence;
+package com.github.lmiljak.dowertefence;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
