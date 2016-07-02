@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.LMiljak</groupId>
-  <artifactId>Dower-Tefence</artifactId>
+  <groupId>com.github.lmiljak</groupId>
+  <artifactId>dowertefence</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Dower Tefence</name>
   <description>Dower Tefence is a Minecraft Plugin for Bukkit/Spigot servers that adds the popular game "Tower Defence" as a minigame.</description>
