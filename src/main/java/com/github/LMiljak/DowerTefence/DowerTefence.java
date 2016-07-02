@@ -8,4 +8,14 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public final class DowerTefence extends JavaPlugin {
 
+	@Override
+	public void onEnable() {
+		getLogger().info("The plugin has been successfully enabled");
+	}
+	
+	@Override
+	public void onDisable() {
+		getLogger().info("The plugin has been successfully disabled");
+	}
+	
 }
