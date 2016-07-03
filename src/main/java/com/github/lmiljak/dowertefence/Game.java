@@ -12,14 +12,13 @@ public interface Game {
 	/**
 	 * Gets the players currently in this game.
 	 * 
-	 * @return
-	 * 		The players currently in this game.
+	 * @return The players currently in this game.
 	 */
 	Set<Player> getPlayers();
-	
+
 	/**
 	 * Starts the game.
 	 */
 	void start();
-	
+
 }
