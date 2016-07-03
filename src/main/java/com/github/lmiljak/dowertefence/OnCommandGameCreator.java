@@ -5,7 +5,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 /**
- * A GameCreator that creates a game that may contain multiple people, when certain commands have been executed by a user.
+ * A GameCreator that creates a game that may contain multiple people, when
+ * certain commands have been executed by a user.
  */
 public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 
@@ -18,13 +19,13 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 	@Override
 	public void registerNewGameListener(NewGameListener newGameListener) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void unregsiterNewGameListener(NewGameListener newGameListener) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
