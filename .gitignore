@@ -12,3 +12,4 @@ buildNumber.properties
 .project
 .idea/*
 Dower-Tefence.iml
+.eclipse-pmd
