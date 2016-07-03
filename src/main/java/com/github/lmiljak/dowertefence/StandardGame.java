@@ -30,12 +30,12 @@ public class StandardGame implements Game {
 		for (Player player : players) {
 			// Only add non-null players and online players
 			if (player != null && player.isOnline()) {
-				players.add(player);
+				this.players.add(player);
 			}
 		}
 
 		// Check if there is at least one player in the game
-		if (players.isEmpty()) {
+		if (this.players.isEmpty()) {
 			throw new IllegalArgumentException("There are no online players in the set " + players);
 		}
 	}
