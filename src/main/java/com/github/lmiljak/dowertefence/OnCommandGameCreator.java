@@ -31,7 +31,7 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 	 * instantiated when a player wants to start a game, but must wait for other
 	 * players to accept the invitation.
 	 */
-	private class PotentialGame {
+	private static class PotentialGame {
 
 		// Maps each player that got an invite to whether that player accepted
 		// the invite
