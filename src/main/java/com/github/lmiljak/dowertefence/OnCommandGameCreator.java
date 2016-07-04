@@ -188,7 +188,9 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 				inviter.sendMessage("One or more of the specified players do not exist or are not online.");
 				return null;
 			}
-			result.add(invitedPlayer);
+			if (invitedPlayer != inviter) {
+				result.add(invitedPlayer);
+			}
 		}
 
 		for (Player player : result) {
