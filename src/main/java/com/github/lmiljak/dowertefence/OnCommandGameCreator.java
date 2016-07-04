@@ -81,7 +81,7 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 		// Processes the start and accept sub commands
 
 		if (!(sender instanceof Player)) {
-			sender.sendMessage("You must be a Player to send this message");
+			sender.sendMessage("You must be a Player to execute this command");
 			return false;
 		}
 		if (args.length == 0) {
