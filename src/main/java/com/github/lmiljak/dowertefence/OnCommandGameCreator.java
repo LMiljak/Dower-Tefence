@@ -84,6 +84,11 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 			sender.sendMessage("You must be a Player to send this message");
 			return false;
 		}
+		if (args.length == 0) {
+			// There should always be at least one argument such as "start" or
+			// "accept".
+			return false;
+		}
 
 		if (label.equals(DowerTefence.PARENT_COMMAND)) {
 			switch (args[0]) {
