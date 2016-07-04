@@ -72,7 +72,8 @@
     <dependency>
       <groupId>nl.taico</groupId>
       <artifactId>TaeirLib</artifactId>
-      <version>[1.5.5,)</version>
+      <version>[1.5.7,)</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 
@@ -135,6 +136,13 @@
             <configuration>
               <shadedArtifactAttached>false</shadedArtifactAttached>
               <createDependencyReducedPom>false</createDependencyReducedPom>
+              <relocations>
+                <relocation>
+                  <!-- Relocate to different location to prevent plugin conflicts. -->
+                  <pattern>nl.taico.taeirlib</pattern>
+                  <shadedPattern>nl.taico.taeirlib.dowertefence</shadedPattern>
+                </relocation>
+              </relocations>
             </configuration>
           </execution>
         </executions>
