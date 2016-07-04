@@ -145,6 +145,12 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 			return true;
 		}
 
+		participants = invitePlayers(sender, invitedPlayers);
+		if (participants == null) {
+			// The invites have been cancelled and the sender got notified.
+			return true;
+		}
+		
 		for (String arg : invitedPlayers) {
 			Player invitedPlayer = Bukkit.getPlayer(arg);
 
@@ -160,6 +166,37 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 		potentialGames.put(sender, new PotentialGame(participants));
 		sender.sendMessage("Waiting for all invited players to accept.");
 		return true;
+	}
+
+	/**
+	 * Invites an array of players by sending them a message. If one or more of
+	 * the specified players do not exist or are not online, the invites will be
+	 * cancelled and the inviter will be notified.
+	 * 
+	 * @param inviter
+	 *            The player that invited the other players.
+	 * @param players
+	 *            The names of the players that should get invited.
+	 * @return The Set of players that got invited. Null if the invites got
+	 *         cancelled.
+	 */
+	private HashSet<Player> invitePlayers(Player inviter, String[] players) {
+		HashSet<Player> result = new HashSet<>();
+		for (String player : players) {
+			Player invitedPlayer = Bukkit.getPlayer(player);
+			if (invitedPlayer == null) {
+				inviter.sendMessage("One or more of the specified players do not exist or are not online.");
+				return null;
+			}
+			result.add(invitedPlayer);
+		}
+
+		for (Player player : result) {
+			player.sendMessage(inviter + " has invited you to join a game of Dower Tefence. Type \"/dt accept "
+					+ inviter + "\" to accept the invite.S");
+		}
+		
+		return result;
 	}
 
 	/**
