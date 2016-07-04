@@ -266,7 +266,7 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 	}
 
 	@Override
-	public boolean unregsiterNewGameListener(NewGameListener newGameListener) {
+	public boolean unregisterNewGameListener(NewGameListener newGameListener) {
 		return listeners.remove(newGameListener);
 	}
 

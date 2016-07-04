@@ -28,6 +28,6 @@ public interface GameCreator {
 	 *            The listener that should be unregistered.
 	 * @return true if and only if the listener has been successfully removed.
 	 */
-	boolean unregsiterNewGameListener(NewGameListener newGameListener);
+	boolean unregisterNewGameListener(NewGameListener newGameListener);
 
 }
