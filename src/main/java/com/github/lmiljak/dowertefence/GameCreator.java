@@ -8,12 +8,17 @@ public interface GameCreator {
 
 	/**
 	 * Registers a NewGameListener to this GameCreator. A registered listener
-	 * should be notified when this creator creates a new Game.
+	 * should be notified when this creator creates a new Game. If the listener
+	 * has already been registered, it should not do so again.
 	 * 
 	 * @param newGameListener
 	 *            The listener that should be registered.
+	 * @return true if and only if the listener has been successfully
+	 *         registered.
+	 * @throws NullPointerException
+	 *             If the given listener is null.
 	 */
-	void registerNewGameListener(NewGameListener newGameListener);
+	boolean registerNewGameListener(NewGameListener newGameListener) throws NullPointerException;
 
 	/**
 	 * Unregisters an already registered listener from this creator. If this
@@ -21,7 +26,8 @@ public interface GameCreator {
 	 * 
 	 * @param newGameListener
 	 *            The listener that should be unregistered.
+	 * @return true if and only if the listener has been successfully removed.
 	 */
-	void unregsiterNewGameListener(NewGameListener newGameListener);
+	boolean unregsiterNewGameListener(NewGameListener newGameListener);
 
 }
