@@ -222,7 +222,7 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 
 		Player host = Bukkit.getPlayer(hostingPlayer[0]);
 		if (host == null) {
-			sender.sendMessage("The specified players does not exist or is not online.");
+			sender.sendMessage("One or more of specified players do not exist or are not online.");
 			return true;
 		}
 
