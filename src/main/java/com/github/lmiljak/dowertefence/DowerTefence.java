@@ -18,6 +18,7 @@ public final class DowerTefence extends JavaPlugin {
 	 * [arguments]. These commands should be equivalent to the ones specified in
 	 * the plugin.yml file.
 	 */
+	static final List<String> PARENT_COMMANDS = Arrays.asList("dt", "dowertefence");
 
 	private OnCommandGameCreator gameCreator;
 	private AutoGameStarter gameStarter;
