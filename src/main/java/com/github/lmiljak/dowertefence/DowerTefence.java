@@ -17,10 +17,11 @@ public final class DowerTefence extends JavaPlugin {
 	public static final String PARENT_COMMAND = "dt";
 
 	private OnCommandGameCreator gameCreator;
+	private AutoGameStarter gameStarter;
 
 	@Override
 	public void onEnable() {
-		registerCommandExecutors();
+		createPluginComponents();
 
 		getLogger().info("The plugin has been successfully enabled");
 	}
@@ -33,9 +34,12 @@ public final class DowerTefence extends JavaPlugin {
 	/**
 	 * Registers all classes that implement the CommandExecutor interface.
 	 */
-	private void registerCommandExecutors() {
+	private void createPluginComponents() {
 		this.gameCreator = new OnCommandGameCreator();
 		getCommand(PARENT_COMMAND).setExecutor(gameCreator);
+
+		this.gameStarter = new AutoGameStarter();
+		gameCreator.registerNewGameListener(gameStarter);
 	}
 
 }
