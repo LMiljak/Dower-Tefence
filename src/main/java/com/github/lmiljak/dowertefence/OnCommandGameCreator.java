@@ -150,7 +150,7 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 			// The invites have been cancelled and the sender got notified.
 			return true;
 		}
-		
+
 		for (String arg : invitedPlayers) {
 			Player invitedPlayer = Bukkit.getPlayer(arg);
 
@@ -192,10 +192,11 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 		}
 
 		for (Player player : result) {
-			player.sendMessage(inviter + " has invited you to join a game of Dower Tefence. Type \"/dt accept "
-					+ inviter + "\" to accept the invite.S");
+			player.sendMessage(
+					inviter.getName() + " has invited you to join a game of Dower Tefence. Type \"/dt accept "
+							+ inviter.getName() + "\" to accept the invite.S");
 		}
-		
+
 		return result;
 	}
 
