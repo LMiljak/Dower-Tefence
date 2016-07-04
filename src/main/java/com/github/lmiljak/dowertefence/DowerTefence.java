@@ -1,5 +1,8 @@
 package com.github.lmiljak.dowertefence;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -9,12 +12,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class DowerTefence extends JavaPlugin {
 
 	/**
-	 * The default "parent" command of all commands associated with this plugin.
-	 * This means that every command starts with this String, followed by a sub
-	 * command. /[PARENT_COMMAND] [SUB_COMMAND] [arguments]. This command should
-	 * be equivalent to the one specified in the plugin.yml file.
+	 * The default "parent" commands of all commands associated with this
+	 * plugin. This means that every command starts with either one of these
+	 * String, followed by a sub command. /[PARENT_COMMAND] [SUB_COMMAND]
+	 * [arguments]. These commands should be equivalent to the ones specified in
+	 * the plugin.yml file.
 	 */
-	public static final String PARENT_COMMAND = "dt";
 
 	private OnCommandGameCreator gameCreator;
 	private AutoGameStarter gameStarter;
@@ -36,7 +39,9 @@ public final class DowerTefence extends JavaPlugin {
 	 */
 	private void createPluginComponents() {
 		this.gameCreator = new OnCommandGameCreator();
-		getCommand(PARENT_COMMAND).setExecutor(gameCreator);
+		for (String command : PARENT_COMMANDS) {
+			getCommand(command).setExecutor(gameCreator);
+		}
 
 		this.gameStarter = new AutoGameStarter();
 		gameCreator.registerNewGameListener(gameStarter);

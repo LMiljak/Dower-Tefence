@@ -90,7 +90,7 @@ public class OnCommandGameCreator implements GameCreator, CommandExecutor {
 			return false;
 		}
 
-		if (label.equals(DowerTefence.PARENT_COMMAND)) {
+		if (DowerTefence.PARENT_COMMANDS.contains(label)) {
 			switch (args[0]) {
 			case "start":
 				return processStartCommand((Player) sender, removeFirst(args));
