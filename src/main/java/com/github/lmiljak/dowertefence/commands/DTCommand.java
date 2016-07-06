@@ -1,7 +1,5 @@
 package com.github.lmiljak.dowertefence.commands;
 
-import org.bukkit.ChatColor;
-
 import nl.taico.taeirlib.commands.CommandArgs;
 import nl.taico.taeirlib.commands.TCommand;
 
@@ -10,14 +8,18 @@ import nl.taico.taeirlib.commands.TCommand;
  */
 public class DTCommand {
 	/**
-	 * Handles /dt and /dt help.
+	 * Handles /dt and all subcommands that are not handled elsewhere.
 	 * 
-	 * @param args
+	 * @param cargs
 	 * 		the command arguments
 	 */
-	@TCommand(name = "dt", usage = "/dt", description = "Main Dower Tefence command", aliases = {"dt.help"}, showInHelp = true)
-	public void dtHelp(CommandArgs args) {
-		args.sendMessage(ChatColor.GOLD + "----" + ChatColor.BLUE + " Dower Tefence Help " + ChatColor.GOLD + "----");
-		args.sendMessage("PLACEHOLDER");
+	@TCommand(name = "dt", usage = "/dt", description = "Main Dower Tefence command", showInHelp = true)
+	public void dt(CommandArgs cargs) {
+		String[] args = cargs.getArgs();
+		if (args.length == 0) {
+			cargs.sendMessage("PLACEHOLDER for help");
+		} else {
+			cargs.sendMessage("&cUnknown subcommand &6'" + args[0] + "'&c! &7Use /dt help for help.");
+		}
 	}
 }
