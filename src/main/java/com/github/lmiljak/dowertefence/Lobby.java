@@ -117,4 +117,15 @@ public class Lobby {
 		}
 	}
 
+	/**
+	 * Checks if a player has been invited to this lobby.
+	 * 
+	 * @param player
+	 *            The player to check.
+	 * @return True iff the player has been invited to this lobby.
+	 */
+	public boolean isInvited(Player player) {
+		return invitedPlayers.contains(player);
+	}
+
 }
