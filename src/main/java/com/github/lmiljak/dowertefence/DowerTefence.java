@@ -40,9 +40,6 @@ public final class DowerTefence extends JavaPlugin {
 	 */
 	private void createPluginComponents() {
 		this.gameCreator = new OnCommandGameCreator();
-		for (String command : PARENT_COMMANDS) {
-			getCommand(command).setExecutor(gameCreator);
-		}
 
 		this.gameStarter = new AutoGameStarter();
 		gameCreator.registerNewGameListener(gameStarter);
