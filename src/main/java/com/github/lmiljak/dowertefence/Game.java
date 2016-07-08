@@ -21,4 +21,14 @@ public interface Game {
 	 */
 	void start();
 
+	/**
+	 * Checks whether this game is representing an actual game, or a fake one
+	 * that does not really represent anything.
+	 * 
+	 * @return True iff this game is a fake one.
+	 */
+	default boolean isFake() {
+		return false;
+	}
+
 }
